@@ -1,0 +1,40 @@
+# Modifications made by jsansait@nvidia.com
+# Installation
+
+Download the file
+$ wget https://gist.githubusercontent.com/bwhaley/490a1ee890c0f010b1f3/raw/b471e67138be484a0140e5ca420b0ffca7726ed1/artifactory.py
+
+Install the requests library
+$ pip install requests
+
+Set TEAMCITY env vars
+$ export TEAMCITY_USERNAME=ben
+$ export TEAMCITY_PASSWORD=mypassword
+$ export TEAMCITY_HOST=http://w.x.y.z:p
+
+Use artifactory
+$ python artifactory.py 
+
+usage: artifactory.py [-h] [-p PROJECT] [-s SUBPROJECT] [-b BUILDTYPE]
+                      [-t TAG] [-a ARTIFACT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROJECT, --project PROJECT
+                        Name of TeamCity project
+  -s SUBPROJECT, --subproject SUBPROJECT
+                        Name of TeamCity subproject
+  -b BUILDTYPE, --buildtype BUILDTYPE
+                        Build type
+  -t TAG, --tag TAG     Tag (usually the commit sha)
+  -a ARTIFACT, --artifact ARTIFACT
+                        Artifact to retrieve
+
+
+Must supply project. Possible values:
+{
+    "projects": [
+        "Project1",
+        "Project2"
+    ]
+}
